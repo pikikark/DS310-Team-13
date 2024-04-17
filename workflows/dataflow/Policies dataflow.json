@@ -1,0 +1,112 @@
+{
+	"name": "Policies dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Policy_Parquet",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ODSMetrics",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          CountryName as string,",
+				"          CountryCode as string,",
+				"          RegionName as string,",
+				"          RegionCode as string,",
+				"          Jurisdiction as string,",
+				"          Date as timestamp,",
+				"          C1_SchoolClosing as long,",
+				"          C1_Flag as long,",
+				"          C2_WorkplaceClosing as long,",
+				"          C2_Flag as long,",
+				"          C3_CancelPublicEvents as long,",
+				"          C3_Flag as long,",
+				"          C4_RestrictionsOnGatherings as long,",
+				"          C4_Flag as long,",
+				"          C5_ClosePublicTransport as long,",
+				"          C5_Flag as long,",
+				"          C6_StayAtHomeRequirements as long,",
+				"          C6_Flag as long,",
+				"          C7_RestrictionsOnInternalMovement as long,",
+				"          C7_Flag as long,",
+				"          C8_InternationalTravelControls as long,",
+				"          E1_IncomeSupport as long,",
+				"          E1_Flag as long,",
+				"          E2_DebtContractRelief as long,",
+				"          E3_FiscalMeasures as double,",
+				"          E4_InternationalSupport as double,",
+				"          H1_PublicInformationCampaigns as long,",
+				"          H1_Flag as long,",
+				"          H2_TestingPolicy as long,",
+				"          H3_ContactTracing as long,",
+				"          H4_EmergencyInvestmentInHealthcare as double,",
+				"          H5_InvestmentInVaccines as double,",
+				"          H6_FacialCoverings as long,",
+				"          H6_Flag as long,",
+				"          H7_VaccinationPolicy as long,",
+				"          H7_Flag as long,",
+				"          H8_ProtectionOfElderlyPeople as long,",
+				"          H8_Flag as long,",
+				"          M1_Wildcard as long,",
+				"          StringencyIndex as double,",
+				"          StringencyIndexForDisplay as double,",
+				"          StringencyLegacyIndex as double,",
+				"          StringencyLegacyIndexForDisplay as double,",
+				"          GovernmentResponseIndex as double,",
+				"          GovernmentResponseIndexForDisplay as double,",
+				"          ContainmentHealthIndex as double,",
+				"          ContainmentHealthIndexForDisplay as double,",
+				"          EconomicSupportIndex as double,",
+				"          EconomicSupportIndexForDisplay as double,",
+				"          id as string,",
+				"          {_rid} as string,",
+				"          {_self} as string,",
+				"          {_etag} as string,",
+				"          {_attachments} as string,",
+				"          {_ts} as long",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          ID as integer,",
+				"          Updated as date,",
+				"          Confirmed as integer,",
+				"          Confirmed_Change as integer,",
+				"          Latitude as decimal(10,5),",
+				"          Longitude as decimal(10,5),",
+				"          ISO2 as string,",
+				"          ISO3 as string,",
+				"          Country_Region as string,",
+				"          load_time as timestamp",
+				"     ),",
+				"     format: 'parquet',",
+				"     partitionFileNames:['Policies.parquet'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}

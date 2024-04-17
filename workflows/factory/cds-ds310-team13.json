@@ -1,0 +1,9 @@
+{
+	"name": "cds-ds310-team13",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6e86cb51-5f59-4cd0-ab98-bdd058f1fb07",
+		"tenantId": "d57d32cc-c121-488f-b07b-dfe705680c71"
+	}
+}

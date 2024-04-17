@@ -1,0 +1,242 @@
+{
+	"name": "Policy_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dboCosmos.parquet",
+				"fileSystem": "srccosmos"
+			},
+			"compressionCodec": "none"
+		},
+		"schema": [
+			{
+				"name": "CountryName",
+				"type": "UTF8"
+			},
+			{
+				"name": "CountryCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "RegionName",
+				"type": "UTF8"
+			},
+			{
+				"name": "RegionCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "Jurisdiction",
+				"type": "UTF8"
+			},
+			{
+				"name": "Date",
+				"type": "INT96"
+			},
+			{
+				"name": "C1_SchoolClosing",
+				"type": "INT64"
+			},
+			{
+				"name": "C1_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "C2_WorkplaceClosing",
+				"type": "INT64"
+			},
+			{
+				"name": "C2_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "C3_CancelPublicEvents",
+				"type": "INT64"
+			},
+			{
+				"name": "C3_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "C4_RestrictionsOnGatherings",
+				"type": "INT64"
+			},
+			{
+				"name": "C4_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "C5_ClosePublicTransport",
+				"type": "INT64"
+			},
+			{
+				"name": "C5_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "C6_StayAtHomeRequirements",
+				"type": "INT64"
+			},
+			{
+				"name": "C6_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "C7_RestrictionsOnInternalMovement",
+				"type": "INT64"
+			},
+			{
+				"name": "C7_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "C8_InternationalTravelControls",
+				"type": "INT64"
+			},
+			{
+				"name": "E1_IncomeSupport",
+				"type": "INT64"
+			},
+			{
+				"name": "E1_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "E2_DebtContractRelief",
+				"type": "INT64"
+			},
+			{
+				"name": "E3_FiscalMeasures",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "E4_InternationalSupport",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "H1_PublicInformationCampaigns",
+				"type": "INT64"
+			},
+			{
+				"name": "H1_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "H2_TestingPolicy",
+				"type": "INT64"
+			},
+			{
+				"name": "H3_ContactTracing",
+				"type": "INT64"
+			},
+			{
+				"name": "H4_EmergencyInvestmentInHealthcare",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "H5_InvestmentInVaccines",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "H6_FacialCoverings",
+				"type": "INT64"
+			},
+			{
+				"name": "H6_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "H7_VaccinationPolicy",
+				"type": "INT64"
+			},
+			{
+				"name": "H7_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "H8_ProtectionOfElderlyPeople",
+				"type": "INT64"
+			},
+			{
+				"name": "H8_Flag",
+				"type": "INT64"
+			},
+			{
+				"name": "M1_Wildcard",
+				"type": "INT64"
+			},
+			{
+				"name": "StringencyIndex",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "StringencyIndexForDisplay",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "StringencyLegacyIndex",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "StringencyLegacyIndexForDisplay",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "GovernmentResponseIndex",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "GovernmentResponseIndexForDisplay",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "ContainmentHealthIndex",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "ContainmentHealthIndexForDisplay",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "EconomicSupportIndex",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "EconomicSupportIndexForDisplay",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "id",
+				"type": "UTF8"
+			},
+			{
+				"name": "_rid",
+				"type": "UTF8"
+			},
+			{
+				"name": "_self",
+				"type": "UTF8"
+			},
+			{
+				"name": "_etag",
+				"type": "UTF8"
+			},
+			{
+				"name": "_attachments",
+				"type": "UTF8"
+			},
+			{
+				"name": "_ts",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
